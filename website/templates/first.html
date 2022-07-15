@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block article %}
+<h1> Hot news </h1>
+{% for index in shall_pass %}
+<h2>{{df.title[index]}}</h2>
+<h2><a href="/article/{{index}}">{{df.title[index]}}</a></h2>
+<h3>{{df.article[index][:110]}} ...</h3>
+<h3><a href="/article/{{index}}">{{df.article[index][:190]}} ...</a></h3>
+<hr>
+
+{% endfor %}
+<h1> Yello! </h1>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

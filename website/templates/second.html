@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block article %}
+<h1> {{df.title[index]}}  </h1>
+<img src={{df.picture[index]}} alt="smthgonewrong" width="500" height="300">
+
+<h2> {{df.article[index]}}  </h2>
+<hr>
+{{relations}}
+{% endblock %}
+<hr>
+
+{% block news_row %}
+<h1> You may also like: </h1>
+{% for item in relations[str_index][:5] %}
+<p> <h2> {{df.title[item]}} </h2> </p>
+<h2><a href="/article/{{item}}">{{df.article[item][:100]}} ...</a></h2>
+<hr>
+
+{% endfor %}
+{% endblock %}
